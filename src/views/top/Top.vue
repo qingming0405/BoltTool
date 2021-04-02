@@ -1,12 +1,12 @@
 <template>
-  <div id="test">
-    噜啦啦噜啦啦啦啦啦啦啦
+  <div id="top">
+    <div>aaaaaaaaaaaaaaaaaa</div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Test'
+  name: 'Top'
 }
 </script>
 
