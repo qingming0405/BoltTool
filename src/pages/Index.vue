@@ -1,8 +1,16 @@
 <template>
   <div id="index">
-    <top/>
-    <left/>
-
+    <el-container>
+      <el-header>
+        <top/>
+      </el-header>
+      <el-aside>
+        <left/>
+      </el-aside>
+      <el-main>
+        
+      </el-main>
+    </el-container>
   </div>
 </template>
 

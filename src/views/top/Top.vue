@@ -15,7 +15,7 @@ export default {
     }
   },
   mounted() {
-    this.test = paramsSet
+    this.test = config.paramsSet
   }
 }
 </script>
