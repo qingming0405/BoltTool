@@ -13,11 +13,11 @@ module.exports = {
       }
     }
   },
-  // chainWebpack: config => {
-  //   config.plugin('html').tap(args => {
-  //     console.log(args);
-  //     args[0].title = "BoltTool"
-  //     return args
-  //   })
-  // }
+  chainWebpack: config => {
+    config.plugin('html').tap(args => {
+      console.log(args);
+      args[0].title = "BoltTool"
+      return args
+    })
+  }
 }
