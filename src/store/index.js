@@ -17,8 +17,10 @@ const state = {
         model: { checked: true, type: 1, label: "规格", value: "", options: {} }
       }
     },
-    
-
+    always: {
+      title: "左侧常显配置",
+      configs: {}
+    }
   }, // 左侧栏参数
 }
 

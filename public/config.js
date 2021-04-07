@@ -45,7 +45,7 @@ let config = {
           threadLen: { checked: false, type: 2, label: "螺纹长度", value: "0" },
         }
       },
-      awalysShow: {
+      always: {
         title: "左侧常显配置",
         configs: {
           pull: { checked: true, type: 2, label: "拉力", value: "1" },
