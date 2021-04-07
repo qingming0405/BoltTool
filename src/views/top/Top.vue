@@ -84,7 +84,7 @@ export default {
     handleSelect(key, keyPath) {
       const path = '/' + keyPath.join('/')
       this.$router.push(path)
-      console.log(path);
+      // console.log(path);
     }
   }
 }
