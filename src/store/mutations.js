@@ -1,8 +1,5 @@
 export default{
-  // setToken(state, token){
-  //   state.token = token
-  // },
-  // setCurUser(state, curUser){
-  //   state.curUser = curUser
-  // }
+  setCh(state, chValue){
+    state.aside.dguParams.configs.ch.value = chValue.toString().trim()
+  }
 }

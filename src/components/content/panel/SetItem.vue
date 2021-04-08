@@ -43,5 +43,9 @@ export default {
     margin-right: 10px;
     white-space: nowrap;
   }
+
+  .el-input, .el-select {
+    width: 200px;
+  }
 }
 </style>

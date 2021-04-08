@@ -1,20 +1,28 @@
 <template>
   <div id="custom-set">
-    <div class="body">
-      <set-panel :panelObj="globalRun"/>
-      <set-panel :panelObj="AScan"/>
-      <set-panel :panelObj="signalReceive"/>
-    </div>
-    <div class="foot">
-      <el-button type="primary" round>保存设置</el-button>
+    <l-aside ref="laside"/>
+    <div class="main">
+      <div class="body">
+        <set-panel :panelObj="globalRun"/>
+        <set-panel :panelObj="AScan"/>
+        <set-panel :panelObj="signalReceive"/>
+      </div>
+      <div class="foot">
+        <el-button type="primary" round @click="saveClick">保存设置</el-button>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import SetPanel from 'components/content/panel/SetPanel.vue'
+import LAside from 'components/content/aside/LAside.vue'
+
 export default {
-  components: { SetPanel },
+  components: { 
+    SetPanel,
+    LAside,
+  },
   name: 'CustomSet',
   data() {
     return {
@@ -27,10 +35,17 @@ export default {
     this.getAllConfig()
   },
   methods: {
+    // 获取所有配置
     getAllConfig() {
       this.globalRun = config.paramsSet.globalRun
       this.signalReceive = config.paramsSet.signalReceive
       this.AScan = config.paramsSet.AScan
+    },
+    // 保存设置
+    saveClick() {
+      this.$store.commit('setCh', 3000)
+      const dguParams = this.$store.state.aside.dguParams
+      console.log(dguParams.configs.ch.value);
     }
   }
 }
@@ -38,19 +53,28 @@ export default {
 
 <style lang="scss" scoped>
   #custom-set {
-    border: solid 1px #ddd;
-    border-radius: 4px;
-    padding: 15px;
-    .body {
-      display: flex;  
-      flex-wrap: wrap;
-      justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    
+    .aside {
+      width: 300px;
     }
-    .foot {
-      display: flex;
-      justify-content: center;
 
-      padding: 10px;
+    .main {
+      border: solid 1px #ddd;
+      border-radius: 4px;
+      padding: 15px;
+      .body {
+        display: flex;  
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+      .foot {
+        display: flex;
+        justify-content: center;
+
+        padding: 10px;
+      }
     }
   }
 </style>

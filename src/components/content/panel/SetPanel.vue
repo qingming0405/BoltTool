@@ -1,10 +1,10 @@
 <template>
   <div class="set-panel">
-    <div class="head">
+    <div v-if="isShowHead" class="head">
       {{ panelObj.title }}
     </div>
     <div class="body">
-      <set-item class="set-item"
+      <set-item class="set-item" :isShowChecked="isShowChecked"
         v-for="(item, key) in panelObj.configs"
         :key="key"
         :dataObj="item"
@@ -24,6 +24,10 @@ export default {
       default: () => {},
     },
     isShowHead: {
+      type: Boolean,
+      default: true
+    },
+    isShowChecked: {
       type: Boolean,
       default: true
     }
