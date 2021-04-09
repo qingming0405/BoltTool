@@ -82,9 +82,13 @@ export default {
   },
   methods: {
     handleSelect(key, keyPath) {
-      const path = '/' + keyPath.join('/')
-      this.$router.push(path)
-      // console.log(path);
+      if(key === 'helpDoc') {
+        alert('下载后台的帮助文档');
+      }
+      else {
+        const path = '/' + keyPath.join('/')
+        this.$router.push(path)
+      }
     }
   }
 }

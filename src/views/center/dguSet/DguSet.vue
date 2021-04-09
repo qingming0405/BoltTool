@@ -1,6 +1,6 @@
 <template>
   <div id="dgu-set">
-    <h1>DGU设置</h1>
+    
   </div>
 </template>
 

@@ -1,5 +1,14 @@
 <template>
-  <div class="set-panel">
+  <panel class="set-panel" :panelObj="panelObj" :isShowHeader="isShowHead">
+    <div class="main">
+      <set-item class="set-item" :isShowChecked="isShowChecked"
+        v-for="(item, key) in panelObj.configs"
+        :key="key"
+        :dataObj="item"
+      />
+    </div>
+  </panel>
+  <!-- <div class="set-panel">
     <div v-if="isShowHead" class="head">
       {{ panelObj.title }}
     </div>
@@ -10,13 +19,14 @@
         :dataObj="item"
       />
     </div>
-  </div>
+  </div> -->
 </template>
 
 <script>
+import Panel from './Panel.vue';
 import SetItem from "./SetItem.vue";
 export default {
-  components: { SetItem },
+  components: { SetItem, Panel },
   name: "SetPanel",
   props: {
     panelObj: {
@@ -40,20 +50,7 @@ export default {
 
 <style lang="scss" scoped>
 .set-panel {
-  margin: 10px 15px;
-  border: #ddd solid 1px;
-  border-radius: 5px;
-  color: #333;
-  font-size: 12px;
-  .head {
-    padding: 10px 15px;
-    background: #f5f5f5;
-    border-bottom: 1px solid transparent;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-  }
-  .body {
-    padding: 15px;
+  .main {
     .set-item {
       margin: 10px 0px;
     }

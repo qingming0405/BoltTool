@@ -5,6 +5,15 @@ import Login from 'pages/Login'
 import Index from 'pages/Index'
 import Test from 'pages/Test'
 
+
+/**
+ * 重写路由的push方法，否则访问相同路由会报错
+ */
+ const routerPush = VueRouter.prototype.push
+ VueRouter.prototype.push = function push(location) {
+   return routerPush.call(this, location).catch(error=> error)
+ }
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -22,6 +31,7 @@ const routes = [
     name: 'Login',
     component: Login
   },
+  // 设置
   {
     path: '/set',
     name: 'Index',
@@ -36,6 +46,7 @@ const routes = [
       }
     ]
   },
+  // 视图
   {
     path: '/view',
     name: 'Index',
@@ -54,6 +65,7 @@ const routes = [
       }
     ]
   },
+  // 帮助
   {
     path: '/help',
     name: 'Index',
@@ -65,6 +77,10 @@ const routes = [
       {
         path: 'version',
         component: () => import('views/center/version/Version')
+      },
+      {
+        path: 'contact',
+        component: () => import('views/center/contact/Contact')
       }
     ]
   },
