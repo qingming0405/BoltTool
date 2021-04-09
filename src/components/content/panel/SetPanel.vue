@@ -1,5 +1,5 @@
 <!--
-  SetPanel包含标题
+  SetPanel包含标题、配置项列表
   SetPanel可以配置各项是否选中
   SetPanel不包含footer
  -->
