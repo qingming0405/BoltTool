@@ -1,3 +1,8 @@
+<!--
+  SetPanel包含标题
+  SetPanel可以配置各项是否选中
+  SetPanel不包含footer
+ -->
 <template>
   <panel class="set-panel" :panelObj="panelObj" :isShowHeader="isShowHead">
     <div class="main">
@@ -8,18 +13,6 @@
       />
     </div>
   </panel>
-  <!-- <div class="set-panel">
-    <div v-if="isShowHead" class="head">
-      {{ panelObj.title }}
-    </div>
-    <div class="body">
-      <set-item class="set-item" :isShowChecked="isShowChecked"
-        v-for="(item, key) in panelObj.configs"
-        :key="key"
-        :dataObj="item"
-      />
-    </div>
-  </div> -->
 </template>
 
 <script>
@@ -39,7 +32,7 @@ export default {
     },
     isShowChecked: {
       type: Boolean,
-      default: true
+      default: false
     }
   },
   mounted() {

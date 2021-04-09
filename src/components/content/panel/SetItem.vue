@@ -1,3 +1,7 @@
+<!--
+  SetItem 可以标记是否选中，也可以只显示标签
+  SetItem 可以输入，也可以下拉选择
+ -->
 <template>
   <div class="set-item">
     <el-checkbox v-if="isShowChecked" v-model="dataObj.checked" :label="dataObj.label + '：'" />
@@ -24,7 +28,7 @@ export default {
     },
     isShowChecked: {
       type: Boolean,
-      default: true
+      default: false
     }
   },
   data() {

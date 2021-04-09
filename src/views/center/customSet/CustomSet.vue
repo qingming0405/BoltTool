@@ -3,9 +3,9 @@
     <l-aside ref="laside"/>
     <div class="main">
       <div class="body">
-        <set-panel :panelObj="globalRun"/>
-        <set-panel :panelObj="AScan"/>
-        <set-panel :panelObj="signalReceive"/>
+        <set-panel :panelObj="globalRun" :isShowChecked="true"/>
+        <set-panel :panelObj="AScan" :isShowChecked="true"/>
+        <set-panel :panelObj="signalReceive" :isShowChecked="true"/>
       </div>
       <div class="foot">
         <el-button type="primary" round @click="saveClick">保存设置</el-button>

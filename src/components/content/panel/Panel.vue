@@ -34,17 +34,20 @@ export default {
 
 <style lang="scss" scoped>
 .panel {
-  margin: 10px 15px;
-  border: #ddd solid 1px;
+  margin: 10px 10px;
+  border: 1px solid #EBEEF5;
   border-radius: 4px;
-  color: #333;
-  font-size: 12px;
+  background-color: #FFF;
+  color: #303133;
+  transition: .3s;
+  overflow: hidden;
+
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  
   .header {
-    padding: 10px 15px;
-    background: #f5f5f5;
-    border-bottom: 1px solid transparent;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    padding: 18px 20px;
+    border-bottom: 1px solid #EBEEF5;
+    box-sizing: border-box;
   }
   .main {
     padding: 15px;

@@ -1,7 +1,7 @@
 <template>
   <div id="laside">
-    <set-panel :panelObj="$store.state.aside.dguParams" :isShowChecked="false"/>
-    <set-panel :panelObj="$store.state.aside.always" :isShowHead="false" :isShowChecked="false"/>
+    <set-panel :panelObj="$store.state.aside.dguParams"/>
+    <set-panel :panelObj="$store.state.aside.always" :isShowHead="false"/>
   </div>
 </template>
 
