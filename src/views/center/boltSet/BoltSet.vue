@@ -19,20 +19,23 @@
         <span>规格列表</span>
       </div>
       <div class="model-item">
-        <div class="model-col1">型号名称</div>
-        <div class="model-col2">操作</div>
+        <div class="model-col1 head">型号名称</div>
+        <div class="model-col2 head">操作</div>
       </div>
-      <div class="model-item" v-for="model in modelList" :key="model">
-        <div class="model-col1">
-          <div>型号：{{model.name}}</div>
-          <div>总长：{{model.totalLen}}</div>
-          <div>标称长度：{{model.standardLen}}</div>
-          <div>直径：{{model.diameter}}</div>
-          <div>夹紧长度：{{model.clampLen}}</div>
-        </div>
-        <div class="model-col2">
-          <el-button type="primary" icon="el-icon-edit" circle></el-button>
-          <el-button type="danger" icon="el-icon-delete" circle></el-button>
+      <div class="model-body">
+        <div class="model-item" v-for="(model, index) in modelList" :key="index">
+          <div class="model-col1">
+            <div>型号：{{model.modelName}}</div>
+            <div>总长：{{model.totalLen}}</div>
+            <div>标称长度：{{model.standardLen}}</div>
+            <div>直径：{{model.diameter}}</div>
+            <div>夹紧长度：{{model.clampLen}}</div>
+            <div>螺纹长度：{{model.threadLen}}</div>
+          </div>
+          <div class="model-col2">
+            <el-button type="primary" icon="el-icon-edit" circle></el-button>
+            <el-button type="danger" icon="el-icon-delete" circle></el-button>
+          </div>
         </div>
       </div>
     </el-card>
@@ -54,15 +57,23 @@ export default {
       boltObj: {
         title: "螺栓配置",
         configs: {
-          modelName: { checked: false, type: 2, label: "规格名称", value: "" },
-          totalLen: { checked: false, type: 2, label: "总长", value: "420" },
-          standardLen: { checked: false, type: 2, label: "标称长度", value: "400" },
-          diameter: { checked: false, type: 2, label: "螺栓直径", value: "64" },
-          clampLen: { checked: false, type: 2, label: "夹紧长度", value: "285" },
-          threadLen: { checked: false, type: 2, label: "螺纹长度", value: "0" },
+          modelName: { checked: false, type: 2, label: "型号名称", value: "" },
+          totalLen: { checked: false, type: 2, label: "总长 mm", value: "420" },
+          standardLen: { checked: false, type: 2, label: "标称长度 mm", value: "400" },
+          diameter: { checked: false, type: 2, label: "螺栓直径 mm", value: "64" },
+          clampLen: { checked: false, type: 2, label: "夹紧长度 mm", value: "285" },
+          threadLen: { checked: false, type: 2, label: "螺纹长度 mm", value: "50" },
         }
       },
-      modelList: [] // 螺栓规格列表
+      modelList: [
+        {modelName: '螺栓1', totalLen: 420, standardLen: 400, diameter: 60, clampLen: 440, threadLen: 50},
+        {modelName: '螺栓1', totalLen: 420, standardLen: 400, diameter: 60, clampLen: 440, threadLen: 50},
+        {modelName: '螺栓1', totalLen: 420, standardLen: 400, diameter: 60, clampLen: 440, threadLen: 50},
+        {modelName: '螺栓1', totalLen: 420, standardLen: 400, diameter: 60, clampLen: 440, threadLen: 50},
+        {modelName: '螺栓1', totalLen: 420, standardLen: 400, diameter: 60, clampLen: 440, threadLen: 50},
+        {modelName: '螺栓1', totalLen: 420, standardLen: 400, diameter: 60, clampLen: 440, threadLen: 50},
+        {modelName: '螺栓1', totalLen: 420, standardLen: 400, diameter: 60, clampLen: 440, threadLen: 50},
+      ] // 螺栓规格列表
     }
   }
 }
@@ -112,7 +123,36 @@ export default {
     }
     
     .model-item {
-      margin-bottom: 18px;
+      display: flex;
+      .model-col1, .model-col2 {
+        flex: 1;
+        padding: 5px;
+        border-right: 1px solid #EBEEF5; 
+        border-bottom: 1px solid #EBEEF5;      
+      }
+      .head, .model-col2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .model-col1{
+        border-left: 1px solid #EBEEF5;
+      }
+      .head{
+        border-top: 1px solid #EBEEF5;
+      }
+    }
+    
+    .model-body {
+      height: 330px;
+
+      overflow-x: hidden;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar{
+        display: none;
+      }
     }
   }
 }
