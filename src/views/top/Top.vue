@@ -85,6 +85,14 @@ export default {
       if(key === 'helpDoc') {
         alert('下载后台的帮助文档');
       }
+      else if(key === 'dguState') {
+        const router_test = this.$router.resolve({
+            name: "set/dguState",
+        });
+        console.log(router_test);
+        window.open(router_test.href+router_test.location.name, '_blank')
+        console.log('Dgu状态');
+      }
       else {
         const path = '/' + keyPath.join('/')
         this.$router.push(path)

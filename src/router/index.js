@@ -45,6 +45,10 @@ const routes = [
         component: () => import('views/center/dguSet/DguSet')
       },
       {
+        path: 'dguState',
+        component: () => import('views/center/dguState/DguState')
+      },
+      {
         path: 'boltSet',
         component: () => import('views/center/boltSet/BoltSet')
       }
