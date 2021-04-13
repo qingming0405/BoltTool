@@ -55,19 +55,20 @@ export default {
   #custom-set {
     display: flex;
     flex-direction: row;
-    
-    .aside {
-      width: 300px;
-    }
+
+    height: 100%;
 
     .main {
+      flex: 1;
       border: solid 1px #ddd;
       border-radius: 4px;
       padding: 15px;
+      height: calc(100% - 32px);
+
       .body {
         display: flex;  
         flex-wrap: wrap;
-        justify-content: space-around;
+        justify-content: center;
       }
       .foot {
         display: flex;

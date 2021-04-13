@@ -49,7 +49,7 @@ export default {
   }
 
   .el-input, .el-select {
-    width: 200px;
+    width: 180px;
   }
 }
 </style>

@@ -67,12 +67,12 @@ export default {
       },
       modelList: [
         {modelName: '螺栓1', totalLen: 420, standardLen: 400, diameter: 60, clampLen: 440, threadLen: 50},
-        {modelName: '螺栓1', totalLen: 420, standardLen: 400, diameter: 60, clampLen: 440, threadLen: 50},
-        {modelName: '螺栓1', totalLen: 420, standardLen: 400, diameter: 60, clampLen: 440, threadLen: 50},
-        {modelName: '螺栓1', totalLen: 420, standardLen: 400, diameter: 60, clampLen: 440, threadLen: 50},
-        {modelName: '螺栓1', totalLen: 420, standardLen: 400, diameter: 60, clampLen: 440, threadLen: 50},
-        {modelName: '螺栓1', totalLen: 420, standardLen: 400, diameter: 60, clampLen: 440, threadLen: 50},
-        {modelName: '螺栓1', totalLen: 420, standardLen: 400, diameter: 60, clampLen: 440, threadLen: 50},
+        {modelName: '螺栓2', totalLen: 420, standardLen: 400, diameter: 60, clampLen: 440, threadLen: 50},
+        {modelName: '螺栓3', totalLen: 420, standardLen: 400, diameter: 60, clampLen: 440, threadLen: 50},
+        {modelName: '螺栓4', totalLen: 420, standardLen: 400, diameter: 60, clampLen: 440, threadLen: 50},
+        {modelName: '螺栓5', totalLen: 420, standardLen: 400, diameter: 60, clampLen: 440, threadLen: 50},
+        {modelName: '螺栓6', totalLen: 420, standardLen: 400, diameter: 60, clampLen: 440, threadLen: 50},
+        {modelName: '螺栓7', totalLen: 420, standardLen: 400, diameter: 60, clampLen: 440, threadLen: 50},
       ] // 螺栓规格列表
     }
   }
@@ -87,9 +87,12 @@ export default {
   border: solid 1px #ddd;
   border-radius: 4px;
   padding: 15px;
+  height: calc(100% - 32px);
 
   .panel-bolt-set {
+    margin: 0px 10px;
     width: 420px;
+    // height: 100%;
 
     .main {
       .set-item {
@@ -104,8 +107,8 @@ export default {
   }
 
   .model-box {
-    margin-top: 10px;
     width: 420px;
+    // height: 100%;
 
     .clearfix {
       .btn-refresh {
@@ -144,7 +147,7 @@ export default {
     }
     
     .model-body {
-      height: 330px;
+      height: calc(100vh - 300px);
 
       overflow-x: hidden;
       scrollbar-width: none;

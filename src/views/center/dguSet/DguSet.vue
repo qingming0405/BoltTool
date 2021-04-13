@@ -57,6 +57,7 @@ export default {
   border: solid 1px #ddd;
   border-radius: 4px;
   padding: 15px;
+  height: calc(100% - 32px);
 
   .panel-dgu-set {
     width: 420px;

@@ -1,24 +1,20 @@
 <template>
-  <!-- <div id="index"> -->
-    <el-container>
-      <!-- 顶部菜单栏 -->
-      <el-header>
-        <top/>
-      </el-header>
-      <el-container>
-        <!-- 左侧螺栓列表 -->
-        <el-aside width="200px">
-          <left/>
-        </el-aside>
-        <!-- 主视图 -->
-        <el-main>
-          <keep-alive>
-            <router-view/>
-          </keep-alive>
-        </el-main>
-      </el-container>
-    </el-container>
-  <!-- </div> -->
+  <div id="index">
+    <div class="header-wrapper">
+      <top/>
+    </div>
+    <div class="body-wrapper">
+      <div class="left-wrapper" v-show="false">
+        <left class="left"/>
+      </div>
+      <div class="main-wrapper">
+        <keep-alive>
+          <router-view/>
+        </keep-alive>
+      </div>
+      
+    </div>
+  </div>
 </template>
 
 <script>
@@ -33,6 +29,21 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+#index {
+  height: calc(100vh - 20px);
 
+  .body-wrapper {
+    height: calc(100% - 60px);
+
+    display: flex;
+
+    .left-wrapper {
+      width: 200px;
+    }
+    .main-wrapper {
+      flex: 1;
+    }
+  }
+}
 </style>

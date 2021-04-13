@@ -1,5 +1,5 @@
 <template>
-  <div id="laside">
+  <div class="laside">
     <set-panel :panelObj="$store.state.aside.dguParams"/>
     <set-panel :panelObj="$store.state.aside.always" :isShowHead="false"/>
   </div>
@@ -26,8 +26,10 @@ export default {
 }
 </script>
 
-<style>
-#aside {
+<style lang="scss" scoped>
+.laside {
   width: 300px;
+  font-size: 12px;
+
 }
 </style>

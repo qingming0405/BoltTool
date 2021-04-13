@@ -5,13 +5,11 @@
  -->
 <template>
   <panel class="set-panel" :panelObj="panelObj" :isShowHeader="isShowHead">
-    <div class="main">
-      <set-item class="set-item" :isShowChecked="isShowChecked"
-        v-for="(item, key) in panelObj.configs"
-        :key="key"
-        :dataObj="item"
-      />
-    </div>
+    <set-item class="set-item" :isShowChecked="isShowChecked"
+      v-for="(item, key) in panelObj.configs"
+      :key="key"
+      :dataObj="item"
+    />
   </panel>
 </template>
 

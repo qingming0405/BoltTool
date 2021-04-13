@@ -1,5 +1,5 @@
 <template>
-  <ul id="bolt-list">
+  <ul id="bolt-list" class="left">
     <li>螺栓1</li>
     <li>螺栓2</li>
     <li>螺栓3</li>
